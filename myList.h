@@ -82,7 +82,7 @@ myList<T>::myList(std::initializer_list<T> il) {
 
 template <typename T>
 myListNodePosi<T> myList<T>::operator[](Rank r) {
-	myListNodePosi p = head->succ;
+	myListNodePosi<T> p = head->succ;
 	for (Rank i = 0; i != r; ++i) {
 		p = p->succ;
 	}
