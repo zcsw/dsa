@@ -1,0 +1,4 @@
+
+release/
+x64/
+*.vcxproj*
