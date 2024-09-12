@@ -2,3 +2,8 @@
 release/
 x64/
 *.vcxproj*
+*.cbp
+*.depend
+*.layout
+bin/
+obj/

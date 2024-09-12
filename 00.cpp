@@ -13,13 +13,12 @@ void dd(int &x){
 
 
 int main(){
-	myList<int> ml = { 0,1,2,3,4,5,6,7,8 };
-	myVector<int> mv = {0,1,2,3,4,5,6,7,8};
-	int ia[] = { 0, 2, 4 };
-	myList<int> ml2(ia, 2, 3);
-	//ml.printAll();
-	//mv.printAll();
-	ml2.printAll();
+
+    int ai[] = {1, 9, 4, 9, 1, 0, 0, 1};
+    myList<int>china(ai, 0, sizeof(ai)/sizeof(ai[0]));
+    myList<int>china2(china.first(), 2);
+    china2.printAll();
+
 
 	return 0;
 }
