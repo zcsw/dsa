@@ -5,5 +5,7 @@ x64/
 *.cbp
 *.depend
 *.layout
+*.out
+.vscode/
 bin/
 obj/

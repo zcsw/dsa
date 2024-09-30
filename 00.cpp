@@ -7,18 +7,15 @@
 using namespace std;
 
 void dd(int &x){
-	x *= 2;
+	x =  x + (x+1)/26;
 }
-
-
 
 int main(){
 
-    int ai[] = {1, 9, 4, 9, 1, 0, 0, 1};
+    int ai[] = {1949, 10 ,1};
     myList<int>china(ai, 0, sizeof(ai)/sizeof(ai[0]));
-    myList<int>china2(china.first(), 2);
-    china2.printAll();
-
+    china.traverse(dd);
+    china.printAll();
 
 	return 0;
 }
