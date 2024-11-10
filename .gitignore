@@ -6,6 +6,7 @@ x64/
 *.depend
 *.layout
 *.out
+*.exe
 .vscode/
 bin/
 obj/
