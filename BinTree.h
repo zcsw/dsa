@@ -1,5 +1,7 @@
 #include "BinNode.h" //引入二叉树节点类
 template <typename T> class BinTree { //二叉树模板类
+private:
+    static Rank removeAt(BinNodePosi<T> x);
 protected:
     Rank _size; BinNodePosi<T> _root; //规模、根节点
 public:
@@ -73,6 +75,33 @@ BinNodePosi<T> BinTree<T>::attach(BinNodePosi<T> x, BinTree<T> S)
     return x;
 }
 
+
+template <typename T>
+Rank BinTree<T>::remove(BinNodePosi<T> x)
+{
+    // cut connection x an d x's parent
+    auto p = x -> parent;
+    if( p->lc == x) {
+        p->lc = nullptr; 
+    }else{
+        p->rc = nullptr;
+    }
+    p->updateHeightAbove();
+    // above this function, logical but pysical delete tree x.
+    // next, we relese space of tree x
+    Rank n = removeAt(x);
+    _size -= n;
+    return n;
+}
+
+template <typename T>
+static Rank removeAt(BinNodePosi<T> x)
+{
+    if ( !x ) return 0;
+    Rank n = 1 + removeAt(x->lc) + removeAt(x->rc);
+    return n;
+}
+
 template <typename T>
 BinTree<T> * BinTree<T>::secede(BinNodePosi<T> x)
 {
@@ -90,3 +119,4 @@ BinTree<T> * BinTree<T>::secede(BinNodePosi<T> x)
 
     return S;
 }
+

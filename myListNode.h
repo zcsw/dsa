@@ -12,14 +12,14 @@ template <typename T> struct myListNode
     T data;
     myListNode<T>* pred;
     myListNode<T>* succ;
-    //¹¹Ôì
+    //ï¿½ï¿½ï¿½ï¿½
     myListNode() : pred(nullptr), succ(nullptr) {};
     myListNode(T e, myListNodePosi<T> p, myListNodePosi<T> s) { data = e; pred = p; succ = s; };
-    //Ç°ºó²åÈë
+    //Ç°ï¿½ï¿½ï¿½ï¿½ï¿½
     myListNodePosi<T> insertAsPred(const T &e) { myListNodePosi<T> newNode = new myListNode(e, pred, this);  pred->succ = newNode;  pred = newNode; return newNode; };
     myListNodePosi<T> insertAsSucc(const T &e) { myListNodePosi<T> newNode = new myListNode(e, this, succ);  succ->pred = newNode;  succ = newNode; return newNode; };
 
-    //·µ»ØÖµ
+    //ï¿½ï¿½ï¿½ï¿½Öµ
     T get() { return data; };
 };
 
