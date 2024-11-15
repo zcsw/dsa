@@ -95,7 +95,7 @@ Rank BinTree<T>::remove(BinNodePosi<T> x)
 }
 
 template <typename T>
-static Rank removeAt(BinNodePosi<T> x)
+Rank BinTree<T>::removeAt(BinNodePosi<T> x)
 {
     if ( !x ) return 0;
     Rank n = 1 + removeAt(x->lc) + removeAt(x->rc);
